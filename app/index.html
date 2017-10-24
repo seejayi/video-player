@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Video</title>
+
+  <link href="css/main.css" rel="stylesheet">
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.6.2/dash.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"></script>
+  
+</head>
+<body>
+  <h1 class="video-title">Video</h1>
+  <div class="video-wrap">
+    <video id="my_video_1" class="video-js vjs-default-skin vjs-fluid" controls preload="auto" width="640" height="350" 
+    data-setup='{}'>
+      <source src="https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8" type="application/x-mpegURL">
+      <!-- <source src="https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd" type="application/dash+xml"> -->
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="http://videojs.com/html5-video-support/" target="_blank">
+          supports HTML5 video
+        </a>
+      </p>
+    </video>
+  </div>
+  
+  <script>
+    var player = videojs('my_video_1');
+    player.on('ended', function() {
+      player.src({type: "application/dash+xml", src: "https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd"});
+      player.play();
+    });
+  </script>
+  
+</body>
+</html>
