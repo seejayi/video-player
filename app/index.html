@@ -17,8 +17,8 @@
   <div class="video-wrap">
     <video id="my_video_1" class="video-js vjs-default-skin vjs-fluid" controls preload="auto" width="640" height="350" 
     data-setup='{}'>
-      <source src="https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8" type="application/x-mpegURL">
-      <!-- <source src="https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd" type="application/dash+xml"> -->
+      <source src="https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd" type="application/dash+xml">
+      <!-- <source src="https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8" type="application/x-mpegURL"> -->
       <p class="vjs-no-js">
         To view this video please enable JavaScript, and consider upgrading to a
         web browser that
@@ -32,7 +32,7 @@
   <script>
     var player = videojs('my_video_1');
     player.on('ended', function() {
-      player.src({type: "application/dash+xml", src: "https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd"});
+      player.src({type: "application/x-mpegURL", src: "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8"});
       player.play();
     });
   </script>
