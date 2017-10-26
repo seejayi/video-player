@@ -8,3 +8,9 @@
 .vjs-big-play-button {
   left: 45% !important;
   top: 45% !important; }
+
+.video-js .vjs-time-control, .video-js .vjs-duration, .video-js .vjs-current-time {
+  display: block !important; }
+
+.video-js .vjs-remaining-time {
+  display: none !important; }
